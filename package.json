@@ -1,0 +1,15 @@
+{
+  "name": "todoapp",
+  "version": "0.0.1",
+  "description": "Example Application for AngularJS",
+  "devDependencies": {
+    "gulp": "^3.5.2",
+    "gulp-coffee": "^1.4.1",
+    "gulp-stylus": "0.0.13",
+    "gulp-concat": "^2.1.7",
+    "gulp-rename": "^1.1.0",
+    "gulp-uglify": "^0.2.1",
+    "gulp-util": "^2.2.14",
+    "coffee-script": "^1.7.1"
+  }
+}

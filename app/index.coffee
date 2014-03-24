@@ -1,4 +1,9 @@
-app = angular.module 'TodoApp', []
+app = angular.module 'TodoApp', ['ngRoute']
+
+app.config ($routeProvider) ->
+  $routeProvider.when '/',
+    templateUrl: '../app/views/todos.html'
+    controller: 'Todos'
 
 class Todos
 
@@ -32,5 +37,6 @@ class Todos
     for todo in oldList
       unless todo.done
         @list.push todo
+    @search = ''
 
 app.controller 'Todos', Todos

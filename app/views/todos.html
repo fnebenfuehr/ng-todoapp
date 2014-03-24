@@ -1,0 +1,19 @@
+<div ng-controller="Todos as todos">
+  <input type="search" placeholder="Filter todos" ng-model="todos.search">
+  <span class="remaining">{{todos.remaining()}} of {{todos.list.length}} remaining</span>
+
+  <button class="archive" ng-click="todos.archive()">Archive</button>
+
+  <ul>
+    <li ng-repeat="todo in todos.list | filter:todos.search">
+      <input type="checkbox" ng-model="todo.done">
+      <span class="done-{{todo.done}}">{{todo.text}}</span>
+    </li>
+  </ul>
+
+  <form ng-submit="todos.addTodo()">
+    <input type="text" ng-model="todos.input" placeholder="add a new todo">
+    <button type="submit">Add</button>
+  </form>
+
+</div>

@@ -1,7 +1,14 @@
 (function() {
   var Todos, app;
 
-  app = angular.module('TodoApp', []);
+  app = angular.module('TodoApp', ['ngRoute']);
+
+  app.config(function($routeProvider) {
+    return $routeProvider.when('/', {
+      templateUrl: '../app/views/todos.html',
+      controller: 'Todos'
+    });
+  });
 
   Todos = (function() {
     function Todos() {
@@ -38,19 +45,16 @@
     };
 
     Todos.prototype.archive = function() {
-      var oldList, todo, _i, _len, _results;
+      var oldList, todo, _i, _len;
       oldList = this.list;
       this.list = [];
-      _results = [];
       for (_i = 0, _len = oldList.length; _i < _len; _i++) {
         todo = oldList[_i];
         if (!todo.done) {
-          _results.push(this.list.push(todo));
-        } else {
-          _results.push(void 0);
+          this.list.push(todo);
         }
       }
-      return _results;
+      return this.search = '';
     };
 
     return Todos;

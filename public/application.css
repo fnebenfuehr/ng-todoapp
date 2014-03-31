@@ -1,3 +1,22 @@
+/* Include this file in your html if you are using the CSP mode. */
+
+@charset "UTF-8";
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+.ng-cloak, .x-ng-cloak,
+.ng-hide {
+  display: none !important;
+}
+
+ng\:form {
+  display: block;
+}
+
+.ng-animate-block-transitions {
+  transition:0s all!important;
+  -webkit-transition:0s all!important;
+}
+
 body {
   font-family: Arial;
   width: 360px;
@@ -21,6 +40,9 @@ div {
 ul {
   list-style: none;
   text-align: left;
+}
+ul li {
+  cursor: pointer;
 }
 .done-true {
   text-decoration: line-through;
